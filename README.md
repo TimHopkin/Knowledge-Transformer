@@ -182,25 +182,35 @@ npm run dev
 ├── app/                    # Next.js 14 app directory
 │   ├── api/               # API routes
 │   │   ├── youtube/       # YouTube processing endpoints
-│   │   ├── content/       # Content management endpoints
-│   │   └── ai/           # AI processing endpoints
+│   │   │   ├── process/   # Main processing route
+│   │   │   └── retry/     # Retry failed jobs
+│   │   └── content/       # Content management endpoints
 │   ├── dashboard/         # Main dashboard page
-│   └── layout.tsx        # Root layout
-├── components/            # React components
+│   ├── content/           # Content viewing pages
+│   └── layout.tsx         # Root layout
+├── components/            # React components (ready for expansion)
 │   ├── ui/               # Reusable UI components
-│   ├── youtube/          # YouTube-specific components
-│   └── content/          # Content display components
+│   ├── content/          # Content display components
+│   └── layout/           # Layout components
 ├── lib/                   # Utility libraries
-│   ├── ai/               # AI integration (Claude, Grok)
-│   │   ├── claude.ts     # Claude API integration
-│   │   └── index.ts      # Main AI interface
-│   ├── youtube.ts        # YouTube API integration
-│   ├── transcripts.ts    # Transcript extraction
+│   ├── ai/               # AI integration
+│   │   ├── claude.ts     # Claude API with enhanced error handling
+│   │   └── index.ts      # AI processing interface
+│   ├── youtube.ts        # YouTube API with specific error types
+│   ├── transcripts.ts    # Transcript extraction with fallbacks
 │   ├── supabase.ts       # Database client
 │   └── utils.ts          # Utility functions
-├── types/                 # TypeScript type definitions
-├── supabase/             # Database migrations
-└── setup.sh              # Setup script
+├── types/                # TypeScript type definitions
+│   ├── ai.ts            # AI processing types
+│   ├── content.ts       # Content management types
+│   └── youtube.ts       # YouTube data types
+├── supabase/             # Database configuration
+│   └── migrations/      # Database schema migrations
+├── docs/                 # Project documentation
+│   ├── ARCHITECTURE.md  # System architecture overview
+│   ├── API.md          # API endpoint documentation
+│   └── DEPLOYMENT.md   # Deployment and setup guide
+└── configuration files  # Package.json, next.config.js, etc.
 ```
 
 ## API Endpoints
